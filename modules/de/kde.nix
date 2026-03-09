@@ -29,6 +29,12 @@
     kdePackages.kclock
     kdePackages.kcolorchooser
     kdePackages.isoimagewriter
+    kdePackages.okular
+    kdePackages.ark
+    kdePackages.kate
+    kdePackages.kwrited
+    kdePackages.kwalletmanager
+    kdePackages.gwenview
   ];
 }
 

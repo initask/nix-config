@@ -15,14 +15,19 @@
     enableAudioWavelength = true;      # Audio visualizer (cava)
     enableCalendarEvents = true;       # Calendar integration (khal)
   };
-  services.displayManager.gdm.enable = true;
+  services.displayManager.dms-greeter = {
+  enable = true;
+  compositor.name = "hyprland";  # Or "hyprland" or "sway"
+  };
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
   services.displayManager.defaultSession = "hyprland";
-  environment.systemPackages = [
-    pkgs.nautilus
+  environment.systemPackages = with pkgs; [
+    nautilus
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
   ];
 }
 

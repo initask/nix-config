@@ -9,6 +9,7 @@ in
     inputs.home-manager.nixosModules.home-manager
     ./modules/nixos
     ./systems
+    ./services
   ]
   ++ lib.optionals (de == "dms") [
     ./modules/de/dms-shell.nix
@@ -29,7 +30,6 @@ in
   core.packages.enable = true;
   core.users.enable = true;
   core.video.enable = true;
-  
 
   home-manager = {
     extraSpecialArgs = { inherit inputs system pkgs; };
@@ -37,6 +37,9 @@ in
     users = {
       initask = import ./home.nix;
     };
+  };
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
   };
   programs.zsh = {
     enable = true;
@@ -57,13 +60,13 @@ in
       conf = "sudo nvim ${flakeDir}";
 
       ll = "ls -l";
-      se = "sudoedit";
+      devfront = "nix-shell /etc/nixos/devshells/frontend-shell.nix"; 
     };
 
     ohMyZsh = {
       enable = true;
       plugins = [ "git" "sudo" ];
-      theme = "agnoster"; # blinks is also really nice
+      theme = "agnoster";
     };
   };
 

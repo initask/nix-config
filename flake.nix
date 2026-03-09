@@ -12,9 +12,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:pjones/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    lazyvim.url = "github:pfassina/lazyvim-nix";
+    zapret.url = "github:kartavkun/zapret-discord-youtube";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nur, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, nur, home-manager, plasma-manager, lazyvim, zapret, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { 

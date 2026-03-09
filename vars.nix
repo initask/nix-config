@@ -1,4 +1,4 @@
 {
-  de = "dms"; # "kde" | "gnome"
+  de = "kde"; # "kde" | "gnome" | "dms"
 }
 

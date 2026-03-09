@@ -21,6 +21,12 @@
 
     # Gamemode — динамически повышает приоритет игр
     programs.gamemode.enable = true;
+    
+    environment = {
+      sessionVariables = {
+        NIXOS_OZONE_WL = "1"; # Enable wayland for chromium-based apps (VSCode Discord Brave)
+      };
+    };
 
     services.xserver.videoDrivers = [ "amdgpu" ]; # nvidia / amdgpu
   };

@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ inputs, config, pkgs, ... }:
 {
   imports = [
     ./modules/home
@@ -10,10 +9,9 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    vim            # stable vim
-    fastfetch   # unstable vim
+    fastfetch
+    obsidian
   ];
-
   home.stateVersion = "24.05";
 }
 

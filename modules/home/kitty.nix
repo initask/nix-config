@@ -1,4 +1,9 @@
-{ ... }: {
+{ config, lib, ... }:
+let
+  vars = import ../../vars.nix;
+  de = vars.de;
+in
+{
   programs.kitty = {
     enable = true;
     font = {
@@ -10,9 +15,12 @@
       scrollback_lines = 10000;
       enable_audio_bell = false;
       update_check_interval = 0;
-      background_opacity = "0.9";
-      background = "#1d1f21";
+      background_opacity = "0.80";
       linux_display_server = "wayland";
-    };
+    } // (if de != "dms" then { background = "#242424"; } else {}); 
+    extraConfig = ''
+      include dank-tabs.conf
+      include dank-theme.conf
+    '';
   };
 }

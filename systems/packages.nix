@@ -5,17 +5,15 @@
 
   config = lib.mkIf config.core.packages.enable {
     environment.systemPackages = with pkgs; [
-      home-manager
       cmake
       curl
       wget
       git
       tree
-      neovim 
-      nur.repos.mio.firefox_nightly
-      firefox
+      gnome-software	
     ];
     nixpkgs.config.allowUnfree = true;
+    services.flatpak.enable = true;
   };
 }
 

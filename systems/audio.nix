@@ -12,6 +12,7 @@
       jack.enable = true;
     };
     security.rtkit.enable = true;
+    hardware.bluetooth.enable = true;
   };
 }
 
