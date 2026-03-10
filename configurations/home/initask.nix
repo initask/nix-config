@@ -1,8 +1,10 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
   imports = [
-    ./modules/home
+    ../../modules/programs
+    ../../modules/desktop/home
   ];
+
   home.username = "initask";
   home.homeDirectory = "/home/initask";
 
@@ -14,4 +16,3 @@
   ];
   home.stateVersion = "24.05";
 }
-

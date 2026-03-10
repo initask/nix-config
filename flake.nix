@@ -27,19 +27,18 @@
       inherit system; 
       overlays = [
         (final: prev: { stable = import nixpkgs-stable { inherit system; config.allowUnfree = true; };})
-	nur.overlays.default
+	      nur.overlays.default
       ];
       config.allowUnfree = true;
     };
   in
   {
-      nixosConfigurations.initask = nixpkgs.lib.nixosSystem {
-
-	specialArgs = { inherit inputs system pkgs; };
-        modules = [
-	  ./configuration.nix
-	];
-      };
+    nixosConfigurations.initask = nixpkgs.lib.nixosSystem {
+	  specialArgs = { inherit inputs system pkgs; };
+      modules = [
+	      ./configurations/nixos/configuration.nix
+	    ];
+    };
   };
 }
 

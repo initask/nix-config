@@ -17,15 +17,15 @@
       };	
       exec-once = [
         # "dms run"
-	# "hyprctl plugin load ${pkgs.hyprlandPlugins.hyprscrolling}/lib/libhyprscrolling.so"
+        # "hyprctl plugin load ${pkgs.hyprlandPlugins.hyprscrolling}/lib/libhyprscrolling.so"
       ];
       general = {
         gaps_in = 4;
         gaps_out = 8;
         border_size = 1;
-	"col.active_border" = "rgba(ffffff1a)";
-	"col.inactive_border" = "rgba(00000000)";
-	layout = "dwindle";
+        "col.active_border" = "rgba(ffffff1a)";
+        "col.inactive_border" = "rgba(00000000)";
+        layout = "dwindle";
       };
       decoration = {
         rounding = 12;

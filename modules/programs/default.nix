@@ -11,11 +11,6 @@ in
     ./vscode.nix
     ./librewolf.nix
     ./vesktop.nix
-  ]
-  ++ lib.optionals (de == "dms") [
-    ./hyprland.nix
-  ]
-  ++ lib.optionals (de == "kde") [
-    ./kde.nix
+    ./zsh.nix
   ];
 }

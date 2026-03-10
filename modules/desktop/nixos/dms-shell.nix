@@ -7,7 +7,7 @@
       restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
     };
   
-  # Core features
+    # Core features
     enableSystemMonitoring = true;     # System monitoring widgets (dgop)
     enableClipboardPaste = true;            # Clipboard history manager
     enableVPN = true;                  # VPN management widget

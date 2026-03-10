@@ -10,6 +10,7 @@
       initialPassword = "1";
       shell = pkgs.zsh;
     };
+    programs.zsh.enable = lib.mkIf (config.users.users.initask.shell == pkgs.zsh) true;
   };
 }
 
